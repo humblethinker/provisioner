@@ -1,0 +1,26 @@
+services:
+  dashboard:
+    build: .
+    command: python3 server.py
+    ports:
+      - "8000:8000"
+    volumes:
+      - scout-data:/app/data
+  browser-agent:
+    build: .
+    command: python3 browser_agent.py
+    environment:
+      SCAN_INTERVAL_SECONDS: "21600"
+      SCOUT_KEYWORDS: "product,ai,developer,platform,ml"
+    volumes:
+      - scout-data:/app/data
+  application-worker:
+    build: .
+    command: python3 application_worker.py
+    environment:
+      OPENAI_API_KEY: ${OPENAI_API_KEY}
+      OPENAI_MODEL: ${OPENAI_MODEL:-gpt-5.4}
+    volumes:
+      - scout-data:/app/data
+volumes:
+  scout-data:
