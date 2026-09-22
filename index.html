@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Scout — AI career intelligence</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <aside class="sidebar">
+      <a class="brand" href="#"><span class="brand-mark">S</span><span>scout</span></a>
+      <nav>
+        <a class="nav-item active" href="#inbox"><span>⌁</span> Opportunities <b>12</b></a>
+        <a class="nav-item" href="#companies"><span>◌</span> Companies</a>
+        <a class="nav-item" href="#tracker"><span>□</span> Application tracker</a>
+        <a class="nav-item" href="#profile"><span>♙</span> Your profile</a>
+      </nav>
+      <div class="sidebar-foot">
+        <div class="sync"><i></i> Last scan · 9 min ago</div>
+        <button class="scan-btn" id="scanButton">↻ Scan careers sites</button>
+        <div class="user"><div class="avatar">JD</div><div><strong>Jordan Davis</strong><small>Product & AI</small></div><span>⌄</span></div>
+      </div>
+    </aside>
+
+    <main>
+      <header>
+        <div><p class="eyebrow">Monday, September 22</p><h1>Good morning, Jordan.</h1><p class="subhead">Three roles surfaced that look especially <em>you.</em></p></div>
+        <div class="header-actions"><button class="icon-btn" aria-label="Notifications">♧<i></i></button><button class="filter-btn">⌘ Filters <span>2</span></button></div>
+      </header>
+
+      <section class="signal-strip" aria-label="Career scan summary">
+        <div><span class="signal-icon green">↗</span><p><strong>12 new roles</strong><small>across 8 watched companies</small></p></div>
+        <div><span class="signal-icon orange">✦</span><p><strong>3 strong matches</strong><small>tailored to your profile</small></p></div>
+        <div><span class="signal-icon blue">◷</span><p><strong>2 closing soon</strong><small>within the next 48 hours</small></p></div>
+      </section>
+
+      <section class="workspace" id="inbox">
+        <div class="roles-panel">
+          <div class="section-heading"><div><p class="eyebrow">Your opportunity feed</p><h2>New roles <span>12</span></h2></div><button class="sort">Most relevant⌄</button></div>
+          <div class="tabs"><button class="selected">All roles <span>12</span></button><button>Strong match <span>3</span></button><button>Saved <span>4</span></button></div>
+          <div class="role-list" id="roleList"></div>
+        </div>
+
+        <aside class="detail-card" id="detailCard">
+          <div class="detail-top"><span class="fresh">NEW TODAY</span><button class="more">•••</button></div>
+          <div class="company-heading"><div class="company-logo openai">◎</div><div><p>OpenAI</p><span>San Francisco · Hybrid</span></div><button class="save" title="Save role">♡</button></div>
+          <h2>Product Manager,<br />Developer Experience</h2>
+          <div class="meta"><span>Full-time</span><span>$245K – $385K</span><span>Posted today</span></div>
+          <div class="match-box"><div class="match-score"><strong>94</strong><small>match</small></div><div><h3>An exceptional fit</h3><p>Your developer platform work and AI product experience align closely with this role.</p></div><button aria-label="View match details">→</button></div>
+          <div class="skills"><p class="label">WHY YOU MATCH</p><div><span>Developer tools</span><span>0→1 products</span><span>AI/ML fluency</span><span>+2 more</span></div></div>
+          <div class="description"><p class="label">ROLE SNAPSHOT</p><p>Lead the strategy and execution for tools that help developers build with OpenAI. You’ll work across research, engineering, and design to make powerful AI capabilities feel intuitive.</p><button id="readMore">Read full description <span>↓</span></button></div>
+          <div class="detail-actions"><button class="secondary" id="tailorButton">✦ Tailor application</button><button class="primary" id="applyButton">Open application ↗</button></div>
+        </aside>
+      </section>
+    </main>
+
+    <div class="toast" id="toast" role="status"></div>
+    <div class="modal-backdrop" id="modal"><div class="modal"><button class="close" id="closeModal">×</button><p class="eyebrow">Application studio</p><h2>Your application is ready to shape.</h2><p>Scout has mapped this role against your profile and drafted a focused resume outline plus four common application answers.</p><div class="modal-grid"><div><b>94%</b><small>Role match</small></div><div><b>6</b><small>Evidence points</small></div><div><b>4</b><small>Draft answers</small></div></div><button class="primary wide" id="studioButton">Open application studio →</button></div></div>
+    <script src="app.js"></script>
+  </body>
+</html>
